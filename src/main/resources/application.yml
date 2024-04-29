@@ -1,0 +1,18 @@
+app:
+  numberOfBooks: 20
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      schema: library_books
+      connection-init-sql: CREATE SCHEMA IF NOT EXISTS library_books
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
